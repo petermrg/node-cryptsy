@@ -2,6 +2,16 @@ var Cryptsy = require('./cryptsy.js');
 
 var cryptsy = new Cryptsy('YOUR-KEY', 'YOUR-SECRET');
 
+var cryptsy = new Cryptsy('6a147ebc4b75c115941ddeec9ff6eddee5a5c052', '5b74cf633ba3a480ad019b55b31a12cafcb86a34967113d5915a1b1a17f7013a37af5072f61691d2');
+
+cryptsy.api('marketdatav2', null, function (err, data) {
+    console.log('marketdatav2', err ? err : data);
+});
+
+cryptsy.api('singlemarketdata', { marketid: 26 }, function (err, data) {
+    console.log('singlemarketdata', err ? err : data);
+});
+
 cryptsy.api('getinfo', null, function (err, data) {
     console.log('getinfo', err ? err : data);
 });
