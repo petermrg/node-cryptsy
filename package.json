@@ -1,0 +1,32 @@
+{
+  "name": "cryptsy",
+  "version": "0.1.0",
+  "description": "Cryptsy Trading Platform API for Node.js ",
+  "main": "cryptsy.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petermrg/node-cryptsy.git"
+  },
+  "keywords": [
+    "Cryptsy",
+    "Trading",
+    "API",
+    "Bitcoin",
+    "Litecoin",
+    "Namecoin",
+    "BTC",
+    "LTC",
+    "NMC"
+  ],
+  "author": "Pedro Ladaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petermrg/node-cryptsy/issues"
+  },
+  "dependencies": {
+    "request": "~2.27.0"
+  }
+}
