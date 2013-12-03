@@ -1,6 +1,6 @@
 {
   "name": "cryptsy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Cryptsy Trading Platform API for Node.js ",
   "main": "cryptsy.js",
   "scripts": {
