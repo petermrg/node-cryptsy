@@ -15,7 +15,7 @@ $ npm install cryptsy
 
 ### Create a Cryptsy object ###
 
-```javascript```
+```javascript
 var Cryptsy = require('cryptsy');
 
 var cryptsy = new Cryptsy('YOUR-KEY', 'YOUR-SECRET');
@@ -33,7 +33,7 @@ Public methods do not require the use of an api key
 
 Examples:
 
-```javascript```
+```javascript
 cryptsy.api('marketdata', null, function (err, data) {
     if (err) {
         throw err;
@@ -70,7 +70,7 @@ Authenticated methods require the use of an api key
 
 Examples:
 
-```javascript```
+```javascript
 cryptsy.api('getinfo', null, function (err, data) {
     if (err) {
         throw err;
