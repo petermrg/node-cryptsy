@@ -25,11 +25,11 @@ var cryptsy = new Cryptsy('YOUR-KEY', 'YOUR-SECRET');
 
 Public methods do not require the use of an api key
 
-    * marketdata
-    * marketdatav2
-    * singlemarketdata
-    * orderdata
-    * singleorderdata
+* marketdata
+* marketdatav2
+* singlemarketdata
+* orderdata
+* singleorderdata
 
 Examples:
 
@@ -51,22 +51,22 @@ cryptsy.api('singlemarketdata', { marketid: 26 }, function (err, data) {
 
 Authenticated methods require the use of an api key
 
-    * getinfo
-    * getmarkets
-    * mytransactions
-    * markettrades
-    * marketorders
-    * mytrades'
-    * allmytrades
-    * myorders
-    * depth
-    * allmyorders
-    * createorder
-    * cancelorder'
-    * cancelmarketorders
-    * cancelallorders
-    * calculatefees
-    * generatenewaddress
+* getinfo
+* getmarkets
+* mytransactions
+* markettrades
+* marketorders
+* mytrades'
+* allmytrades
+* myorders
+* depth
+* allmyorders
+* createorder
+* cancelorder'
+* cancelmarketorders
+* cancelallorders
+* calculatefees
+* generatenewaddress
 
 Examples:
 
