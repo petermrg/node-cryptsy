@@ -7,15 +7,17 @@ Based on [Cryptsy reference implementation](https://www.cryptsy.com/pages/api)
 
 ## Install ##
 
-``bash
+```bash
 $ npm install cryptsy
 ```
+
 ## Sample usage ##
 
 ### Create a Cryptsy object ###
 
 ```javascript```
 var Cryptsy = require('cryptsy');
+
 var cryptsy = new Cryptsy('YOUR-KEY', 'YOUR-SECRET');
 ```
 
