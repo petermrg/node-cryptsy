@@ -14,7 +14,7 @@ var Cryptsy = function(key, secret) {
     this.nonce = Math.floor((new Date()).getTime() / 1000);
     this.userAgent = 'Mozilla/4.0 (compatible; Cryptsy API Node.js client; NodeJS/' + process.version + ')';
 
-    this.privateApiUrl = 'https://www.cryptsy.com/api';
+    this.privateApiUrl = 'https://api.cryptsy.com/api';
     this.publicApiUrl = 'http://pubapi.cryptsy.com/api.php?';
 
     this.publicMethods = [
