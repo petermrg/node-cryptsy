@@ -126,7 +126,7 @@ Cryptsy.prototype.parseResponse = function(err, response, body, callback) {
             if (err) {
                 callback(err, data);
             } else {
-                if (data && !!(data.success|0) && data.return) {
+                if (data && !!(data.success|0) && data.return || data.orderid) {
                     callback(err, data.return);
                 } else {
                     if (data && data.error) {
