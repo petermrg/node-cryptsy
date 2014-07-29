@@ -40,9 +40,9 @@ Cryptsy.prototype.api = function(method, params, callback) {
     params.method = method;
     params.nonce = ++this.nonce;
     if (this.publicMethods.indexOf(method) >= 0) {
-        this.getRequest(params, callback);
+        return this.getRequest(params, callback);
     } else if (this.privateMethods.indexOf(method) >= 0) {
-        this.postRequest(params, callback);
+        return this.postRequest(params, callback);
     } else {
         callback(new Error('Unknown method: ' + method), null);
     }
@@ -74,7 +74,7 @@ Cryptsy.prototype.getRequest = function(params, callback) {
             'User-Agent': this.userAgent,
         }
     }
-    request.get(options, function (err, response, body) {
+    return request.get(options, function (err, response, body) {
         this.parseResponse(err, response, body, callback);
     }.bind(this));
 }
@@ -97,7 +97,7 @@ Cryptsy.prototype.postRequest = function(params, callback) {
         }
     };
 
-    request.post(options, function (err, response, body) {
+    return request.post(options, function (err, response, body) {
         this.parseResponse(err, response, body, callback);
     }.bind(this));
 }
