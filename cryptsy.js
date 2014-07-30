@@ -8,11 +8,12 @@ var request = require('request');
  * @param {string} key    API Key
  * @param {string} secret API Secret
  */
-var Cryptsy = function(key, secret) {
+var Cryptsy = function(key, secret, request_options) {
     this.key = key;
     this.secret = secret;
     this.nonce = Math.floor((new Date()).getTime() / 1000);
     this.userAgent = 'Mozilla/4.0 (compatible; Cryptsy API Node.js client; NodeJS/' + process.version + ')';
+    this.request_options = request_options;
 
     this.privateApiUrl = 'https://www.cryptsy.com/api';
     this.publicApiUrl = 'http://pubapi.cryptsy.com/api.php?';
@@ -67,6 +68,7 @@ Cryptsy.prototype.getSignatureFromString = function(str) {
  * @param  {Function} callback (err, data)
  */
 Cryptsy.prototype.getRequest = function(params, callback) {
+    var request_options  = this.extend({}, this.request_options);
     var options = {
         url: this.publicApiUrl + querystring.stringify(params),
         method: 'GET',
@@ -74,6 +76,9 @@ Cryptsy.prototype.getRequest = function(params, callback) {
             'User-Agent': this.userAgent,
         }
     }
+
+    options = this.extend(request_options, options);
+
     return request.get(options, function (err, response, body) {
         this.parseResponse(err, response, body, callback);
     }.bind(this));
@@ -86,6 +91,7 @@ Cryptsy.prototype.getRequest = function(params, callback) {
  * @param  {Function} callback (err, data)
  */
 Cryptsy.prototype.postRequest = function(params, callback) {
+    var request_options  = this.extend({}, this.request_options);
     var options = {
         url: this.privateApiUrl,
         method: 'POST',
@@ -96,6 +102,8 @@ Cryptsy.prototype.postRequest = function(params, callback) {
             'User-Agent': this.userAgent,
         }
     };
+
+    options = this.extend(request_options, options);
 
     return request.post(options, function (err, response, body) {
         this.parseResponse(err, response, body, callback);
@@ -140,5 +148,18 @@ Cryptsy.prototype.parseResponse = function(err, response, body, callback) {
         }
     }
 }
+
+/**
+ * Extend the destination with the source object and return the
+ * destination. Used for merging request options.
+ *
+ * @param  {Object}   destination   Destination object
+ * @param  {Object}   source   	    Source object
+ */
+Cryptsy.prototype.extend = function(destination, source) {
+  for (var property in source)
+    destination[property] = source[property];
+  return destination;
+};
 
 module.exports = Cryptsy;
