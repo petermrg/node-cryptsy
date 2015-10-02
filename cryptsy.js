@@ -25,7 +25,7 @@ var Cryptsy = function(key, secret, request_options) {
     this.privateMethods = [
         'getinfo', 'getmarkets', 'mytransactions', 'markettrades', 'marketorders', 'mytrades',
         'allmytrades', 'myorders', 'depth', 'allmyorders', 'createorder', 'cancelorder',
-        'cancelmarketorders', 'cancelallorders', 'calculatefees', 'generatenewaddress'
+        'cancelmarketorders', 'cancelallorders', 'calculatefees', 'generatenewaddress', 'makewithdrawal'
     ];
 }
 
