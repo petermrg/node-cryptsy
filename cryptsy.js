@@ -139,10 +139,8 @@ Cryptsy.prototype.parseResponse = function(err, response, body, callback) {
                 } else {
                     if (data && data.error) {
                         err = new Error(data.error);
-                    } else {
-                        err = new Error('Unknown error');
-                    }
-                    callback(err, null);
+                    } 
+                    callback(err, data);
                 }
             }
         }
