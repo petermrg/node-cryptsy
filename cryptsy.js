@@ -15,7 +15,7 @@ var Cryptsy = function(key, secret, request_options) {
     this.userAgent = 'Mozilla/4.0 (compatible; Cryptsy API Node.js client; NodeJS/' + process.version + ')';
     this.request_options = request_options;
 
-    this.privateApiUrl = 'https://www.cryptsy.com/api';
+    this.privateApiUrl = 'https://api.cryptsy.com/api';
     this.publicApiUrl = 'http://pubapi.cryptsy.com/api.php?';
 
     this.publicMethods = [
